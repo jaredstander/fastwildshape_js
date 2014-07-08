@@ -1,0 +1,131 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+     <style type="text/css">
+        body{margin:0%;font-family:Sans-Serif;font-size:small;width:auto;}
+        h1.header{text-align:center;}
+        p.center{text-align:center;}
+        div.lrgContainer{border:0;padding:0;width:100%;}
+        div.lftContainer{border-top:0;border-left:0;border-right:1;border-bottom:0px;border-style:solid;width:30%;float:left;padding:0%;margin-left:20%}
+        div.rhtContainer{border-top:0;border-left:1;border-right:0;border-bottom:0px;border-style:solid;width:25%;margin-left:50%;padding-left:5%;}
+        div.header{width:50%;margin-left:25%;}
+        p.bottom{clear:both;text-align:center;}
+     </style>
+     <script language="javascript" type="text/javascript" src="lib/quickshape.js">
+     </script>
+     <title>QuickShape, The Pathfinder Wild Shape Calculator</title>
+     <link rel="Shortcut Icon" href="http://jaredstander.com/images/favicon.ico">
+     <meta name="Author" content="Jared Stander">
+     <meta name="Copyright" content="All Original Content is direct copyright © of Jared Stander">
+     <meta name="Keywords" content="Jared Stander, Jared, Stander, Pathfinder, RPG, Role-Playing Game, Role Playing Game, Roleplaying Game, ReplyPlayingGame, Wild, Shape, Wild Shape, WildShape, Beast Shape, BeastShape, Elemental Body, Elemental Body, Plant Shape, PlantShape, polymorph">
+  </head>
+  <body>
+     <div class="lrgContainer">
+        <div class="header">
+           <h1 class="header">QuickShape, The Pathfinder Wild Shape Calculator</h1>
+           <p class="center"><b>Made for the Paizo Pathfinder Rule Set</b></p>
+           <p>This calculator easily generates the new stats of 
+characters using polymorph effects via wild shape, beast shape, 
+elemental body, and plant shape.</p>
+           <p><b>UPDATED 8/15/12</b>: Fixed a bug people probably loved 
+involving the calculation of HP when polymorphing. The initial calc gave
+ you tons of extra HP if both the creature you happened to be 
+polymorphing into gave a bonus to CON <i>and</i> your character had a 
+starting CON of 12 or more. This was happening because it was ignoring 
+any bonus HP your starting CON score gave you, essentially giving it to 
+you twice. This has been fixed, and the HP given is now the accurate 
+even when CON is increased or decreased as a result of polymorphing.</p>
+           <p><b>UPDATED 7/13/12</b>: With the Advanced Race Guide out, I
+ know that not every player using this calc will have a small or 
+medium-sized creature. Thus, as of Friday, July 13th, all other possible
+ size options have been added for you to choose when indicating your 
+character's size. As such, creatures which are not small or medium 
+require their size be scaled to the closest of these two sizes 
+(indicated in the "Scaled Size" field below) before applying Wild Shape 
+stats.</p>
+           <p>Please see the following page for reference: <a href="http://paizo.com/pathfinderRPG/prd/magic.html#polymorph">Paizo Polymorph Rules</a>.</p>
+           <p>&nbsp;</p>
+        </div>
+        <div class="lftContainer">
+           <form name="yourStats">
+             <div style="text-align:center;"><b>Your Current Stats:</b></div>
+             <p>STR<br><input name="yourStr" size="2" type="text"></p>
+             <p>DEX<br><input name="yourDex" size="2" type="text"></p>
+             <p>CON<br><input name="yourCon" size="2" type="text"></p>
+             <p>HP<br><input name="yourHP" size="2" type="text"></p>
+             <p>BAB<br><input name="yourBAB" size="2" type="text"></p>
+             <p>AC<br><input name="yourAC" size="2" type="text"></p>
+             <p>Touch<br><input name="yourTouch" size="2" type="text"></p>
+             <p>Flat-Footed<br><input name="yourFF" size="2" type="text"></p>
+             <p>CMB<br><input name="yourCMB" size="2" type="text"></p>
+             <p>CMD<br><input name="yourCMD" size="2" type="text"></p>
+             <p>Character HD:<br><input name="charHD" size="2" type="text">
+             </p><p>Points of AC that stack with Wild Shape. (Magic, wilded, etc.)<br><input name="bsArmorStack" size="2" type="text"></p>
+             <p>Your Size:<br><select name="yourSize">
+               <option value="f">Fine</option>
+               <option value="d">Diminutive</option>
+               <option value="t">Tiny</option>
+               <option value="s">Small</option>
+               <option value="m" selected="selected">Medium</option>
+               <option value="l">Large</option>
+               <option value="h">Huge</option>
+               <option value="g">Gargantuan</option>
+               <option value="c">Colossal</option>
+               </select>
+             </p>
+             <p>Size of desired Animal Shape:<br><select name="animalSize">
+                 <option value="dAN">Diminutive Animal</option>
+                 <option value="tAN">Tiny Animal</option>
+                 <option value="sAN">Small Animal</option>
+                 <option value="mAN">Medium Animal</option>
+                 <option value="lAN" selected="selected">Large Animal</option>
+                 <option value="hAN">Huge Animal</option>
+                 <option value="tMB">Tiny magical Beast</option>
+                 <option value="sMB">Small Magical Beast</option>
+                 <option value="mMB">Medium Magical Beast</option>
+                 <option value="lMB">Large Magical Beast</option>
+                 <option value="sAE">Small Air Elemental</option>
+                 <option value="sEE">Small Earth Elemental</option>
+                 <option value="sFE">Small Fire Elemental</option>
+                 <option value="sWE">Small Water Elemental</option>
+                 <option value="mAE">Medium Air Elemental</option>
+                 <option value="mEE">Medium Earth Elemental</option>
+                 <option value="mFE">Medium Fire Elemental</option>
+                 <option value="mWE">Medium Water Elemental</option>
+                 <option value="lAE">Large Air Elemental</option>
+                 <option value="lEE">Large Earth Elemental</option>
+                 <option value="lFE">Large Fire Elemental</option>
+                 <option value="lWE">Large Water Elemental</option>
+                 <option value="hAE">Huge Air Elemental</option>
+                 <option value="hEE">Huge Earth Elemental</option>
+                 <option value="hFE">Huge Fire Elemental</option>
+                 <option value="hWE">Huge Water Elemental</option>
+                 <option value="sPL">Small Plant</option>
+                 <option value="mPL">Medium Plant</option>
+                 <option value="lPL">Large Plant</option>
+                 <option value="hPL">Huge Plant</option>
+                 </select>
+             </p>
+             <p><input onclick="javascript:doCalc();" value="Execute --&gt;" type="button"></p>
+           </form>
+        </div>
+        <div class="rhtContainer">
+           <form name="newStats">
+             <p class="center"><b>Your New Shape Stats:</b></p>
+             <p>Scaled Size<br><input name="scaledSize" size="13" readonly="readonly" type="text"></p>
+             <p>STR<br><input name="newStr" size="2" readonly="readonly" type="text"></p>
+             <p>DEX<br><input name="newDex" size="2" readonly="readonly" type="text"></p>
+             <p>CON<br><input name="newCon" size="2" readonly="readonly" type="text"></p>
+             <p>HP<br><input name="newHP" size="2" readonly="readonly" type="text"></p>
+             <p>Attack Bonus<br><input name="newATB" size="2" readonly="readonly" type="text"></p>
+             <p>AC<br><input name="newAC" size="2" readonly="readonly" type="text"></p>
+             <p>Touch<br><input name="newTouch" size="2" readonly="readonly" type="text"></p>
+             <p>Flat-Footed<br><input name="newFF" size="2" readonly="readonly" type="text"></p>
+             <p>CMB<br><input name="newCMB" size="2" readonly="readonly" type="text"></p>
+             <p>CMD<br><input name="newCMD" size="2" readonly="readonly" type="text"></p>
+             <p>Stealth Size Mod <input onclick="javascript:stealthAlert();" value="?" type="button"><br><input name="newStealth" size="2" readonly="readonly" type="text"></p>
+           </form>
+        </div>
+        <p class="bottom">&nbsp;</p>
+     </div>
+  
+</body></html>
